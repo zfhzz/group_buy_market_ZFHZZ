@@ -1,0 +1,1 @@
+docker stop group_buy_market_ZFHZZ

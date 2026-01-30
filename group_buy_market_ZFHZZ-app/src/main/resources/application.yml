@@ -1,0 +1,5 @@
+spring:
+  config:
+    name: group_buy_market_ZFHZZ-app
+  profiles:
+    active: dev
