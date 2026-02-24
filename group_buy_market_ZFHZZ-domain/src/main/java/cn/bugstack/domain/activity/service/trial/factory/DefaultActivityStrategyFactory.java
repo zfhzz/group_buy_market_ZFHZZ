@@ -22,11 +22,11 @@ public class DefaultActivityStrategyFactory {
     public DefaultActivityStrategyFactory(RootNode rootNode){
         this.rootNode=rootNode;
     }
-
+    //获取初始的root结点
     public StrategyHandler<MarketProductEntity,DefaultActivityStrategyFactory.DynamicContext, TrialBalanceEntity> strategyHandler(){
         return rootNode;
     }
-
+    //用于加载动态上下文
     @Data
     @Builder
     @AllArgsConstructor

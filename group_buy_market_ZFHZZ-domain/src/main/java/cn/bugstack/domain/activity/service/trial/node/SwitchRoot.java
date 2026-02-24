@@ -15,9 +15,6 @@ import javax.annotation.Resource;
 @Service
 public class SwitchRoot extends AbstractGroupBuyMarketSupport<MarketProductEntity, DefaultActivityStrategyFactory.DynamicContext, TrialBalanceEntity>{
 
-    @Resource
-    private SwitchRoot switchRoot;
-
     @Override
     public TrialBalanceEntity apply(MarketProductEntity requestParameter, DefaultActivityStrategyFactory.DynamicContext dynamicContext) throws Exception {
         return null;
@@ -25,6 +22,6 @@ public class SwitchRoot extends AbstractGroupBuyMarketSupport<MarketProductEntit
 
     @Override
     public StrategyHandler<MarketProductEntity, DefaultActivityStrategyFactory.DynamicContext, TrialBalanceEntity> get(MarketProductEntity requestParameter, DefaultActivityStrategyFactory.DynamicContext dynamicConetxt) {
-        return switchRoot;
+        return null;
     }
 }

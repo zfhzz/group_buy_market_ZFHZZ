@@ -9,10 +9,15 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
 //根结点、开始的结点
 @Slf4j
 @Service
 public class RootNode extends AbstractGroupBuyMarketSupport<MarketProductEntity, DefaultActivityStrategyFactory.DynamicContext, TrialBalanceEntity> {
+
+    @Resource
+    private SwitchRoot switchRoot;
 
     @Override
     public TrialBalanceEntity apply(MarketProductEntity requestParameter, DefaultActivityStrategyFactory.DynamicContext dynamicContext) throws Exception {
@@ -21,6 +26,6 @@ public class RootNode extends AbstractGroupBuyMarketSupport<MarketProductEntity,
 
     @Override
     public StrategyHandler<MarketProductEntity, DefaultActivityStrategyFactory.DynamicContext, TrialBalanceEntity> get(MarketProductEntity requestParameter, DefaultActivityStrategyFactory.DynamicContext dynamicConetxt) {
-        return null;
+        return switchRoot;
     }
 }
