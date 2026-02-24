@@ -1,19 +1,30 @@
-# 命令执行 docker-compose -f docker-compose-environment-aliyun.yml up -d
-# docker 代理和使用文档；https://bugstack.cn/md/road-map/docker.html
+# 启动命令：docker-compose -f docker-compose-environment-aliyun.yml up -d
 version: '3.9'
+
 services:
+  # ==========================================
+  # 1. MySQL 数据库服务
+  # ==========================================
   mysql:
+    # 使用阿里云镜像源，国内下载速度快
     image: registry.cn-hangzhou.aliyuncs.com/xfg-studio/mysql:8.0.32
     container_name: mysql
+    # 关键配置：使用旧版密码认证方式，防止 Navicat 等旧客户端连接报错
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
+      # 设置容器时区为上海时间
       TZ: Asia/Shanghai
+      # 设置 root 用户密码 (请记住这个密码)
       MYSQL_ROOT_PASSWORD: 123456
     ports:
+      # 端口映射：宿主机 13306 -> 容器 3306
       - "13306:3306"
     volumes:
+      # 挂载初始化脚本：容器启动时会自动执行该目录下的 .sql 文件
+      # 注意：需要在当前目录下创建 ./mysql/sql 文件夹
       - ./mysql/sql:/docker-entrypoint-initdb.d
+    # 健康检查：每 5 秒 ping 一次，确保数据库真正启动后再启动依赖它的服务
     healthcheck:
       test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
       interval: 5s
@@ -23,34 +34,46 @@ services:
     networks:
       - my-network
 
-  # phpmyadmin https://hub.docker.com/_/phpmyadmin
+  # ==========================================
+  # 2. phpMyAdmin (MySQL 可视化管理工具)
+  # ==========================================
   phpmyadmin:
     image: registry.cn-hangzhou.aliyuncs.com/xfg-studio/phpmyadmin:5.2.1
     container_name: phpmyadmin
     hostname: phpmyadmin
     ports:
+      # 网页访问端口：浏览器访问 http://localhost:8899
       - 8899:80
     environment:
+      # 连接名为 mysql 的服务容器
       - PMA_HOST=mysql
       - PMA_PORT=3306
+      # 注意：此处原配置密码与 MySQL 设置不一致，建议登录时手动输入 123456
       - MYSQL_ROOT_PASSWORD=123qwe!@#QWE
+    # 依赖配置：只有当 mysql 服务健康检查通过后，才会启动此容器
     depends_on:
       mysql:
         condition: service_healthy
     networks:
       - my-network
 
-  # Redis
+  # ==========================================
+  # 3. Redis 缓存服务
+  # ==========================================
   redis:
     image: registry.cn-hangzhou.aliyuncs.com/xfg-studio/redis:6.2
     container_name: redis
     restart: always
     hostname: redis
+    # 开启特权模式，防止因权限问题导致启动失败
     privileged: true
     ports:
+      # 端口映射：宿主机 16379 -> 容器 6379
       - 16379:6379
     volumes:
+      # 关键挂载：必须在本地 ./redis 目录下提供 redis.conf 配置文件
       - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+    # 指定使用挂载的配置文件启动 Redis
     command: redis-server /usr/local/etc/redis/redis.conf
     networks:
       - my-network
@@ -60,22 +83,24 @@ services:
       timeout: 5s
       retries: 3
 
-  # RedisAdmin https://github.com/joeferner/redis-commander
-  # 账密 admin/admin
+  # ==========================================
+  # 4. Redis Commander (Redis 可视化管理工具)
+  # ==========================================
   redis-admin:
     image: registry.cn-hangzhou.aliyuncs.com/xfg-studio/redis-commander:0.8.0
     container_name: redis-admin
     hostname: redis-commander
     restart: always
     ports:
+      # 网页访问端口：浏览器访问 http://localhost:8081
       - 8081:8081
     environment:
+      # 连接配置：显示名称:服务名:端口
       - REDIS_HOSTS=local:redis:6379
+      # Web 页面登录账号 (默认 admin)
       - HTTP_USER=admin
+      # Web 页面登录密码 (默认 admin)
       - HTTP_PASSWORD=admin
-      - LANG=C.UTF-8
-      - LANGUAGE=C.UTF-8
-      - LC_ALL=C.UTF-8
     networks:
       - my-network
     depends_on:
