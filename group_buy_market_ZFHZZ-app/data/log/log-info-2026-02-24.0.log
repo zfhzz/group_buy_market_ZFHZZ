@@ -1,0 +1,16 @@
+26-02-24.00:49:36.617 [main            ] INFO  GroupBuyActivityDaoTest - Starting GroupBuyActivityDaoTest using Java 1.8.0_391 on LAPTOP-EK831I6O with PID 34864 (started by ZFHZZ in E:\java_project\group_buy_market_ZFHZZ\group_buy_market_ZFHZZ-app)
+26-02-24.00:49:36.618 [main            ] INFO  GroupBuyActivityDaoTest - The following 1 profile is active: "dev"
+26-02-24.00:49:39.192 [main            ] INFO  GroupBuyActivityDaoTest - Started GroupBuyActivityDaoTest in 3.357 seconds (JVM running for 4.956)
+26-02-24.00:49:39.359 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+26-02-24.00:49:40.699 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+26-02-24.00:49:41.022 [main            ] INFO  GroupBuyActivityDaoTest - 测试结果:[{"activityId":100123,"activityName":"测试活动","channel":"c01","createTime":1733537980000,"discountId":"25120207","endTime":1733537980000,"goodsId":"9890001","groupType":0,"id":1,"source":"s01","startTime":1733537980000,"status":0,"tagId":"1","tagScope":"1","takeLimitCount":1,"target":1,"updateTime":1733543247000,"validTime":15}]
+26-02-24.00:49:41.030 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+26-02-24.00:49:41.043 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+26-02-24.00:49:52.284 [main            ] INFO  GroupBuyDiscountDaoTest - Starting GroupBuyDiscountDaoTest using Java 1.8.0_391 on LAPTOP-EK831I6O with PID 9188 (started by ZFHZZ in E:\java_project\group_buy_market_ZFHZZ\group_buy_market_ZFHZZ-app)
+26-02-24.00:49:52.285 [main            ] INFO  GroupBuyDiscountDaoTest - The following 1 profile is active: "dev"
+26-02-24.00:49:54.107 [main            ] INFO  GroupBuyDiscountDaoTest - Started GroupBuyDiscountDaoTest in 2.098 seconds (JVM running for 2.723)
+26-02-24.00:49:54.275 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+26-02-24.00:49:55.389 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+26-02-24.00:49:55.767 [main            ] INFO  GroupBuyDiscountDaoTest - 测试结果:[{"createTime":1733538015000,"discountDesc":"测试优惠","discountId":25120207,"discountName":"测试优惠","discountType":0,"id":1,"marketExpr":"20","marketPlan":"ZJ","updateTime":1733538015000}]
+26-02-24.00:49:55.778 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+26-02-24.00:49:55.789 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
