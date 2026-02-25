@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.websocket.server.ServerEndpoint;
+import java.math.BigDecimal;
 import java.util.Stack;
 
 @Service
@@ -36,5 +37,6 @@ public class DefaultActivityStrategyFactory {
     public static class DynamicContext{
         private GroupBuyActivityDiscountVO groupBuyActivityDiscountVO;
         private SkuVO skuVO;
+        private BigDecimal deductionPrice;
     }
 }
