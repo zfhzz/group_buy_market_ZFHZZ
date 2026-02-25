@@ -227,3 +227,42 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 26-02-25.21:14:40.808 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 返回结果:{"deductionPrice":1.99,"endTime":1733537980000,"goodsId":"9890001","goodsName":"《手写MyBatis：渐进式源码实践》","isEnable":false,"isVisible":false,"originalPrice":100.00,"startTime":1733537980000,"targetCount":1}
 26-02-25.21:14:40.816 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
 26-02-25.21:14:40.818 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+26-02-25.23:11:02.537 [main            ] INFO  ITagServiceTest        - Starting ITagServiceTest using Java 1.8.0_391 on LAPTOP-EK831I6O with PID 29916 (started by ZFHZZ in E:\java_project\group_buy_market_ZFHZZ\group_buy_market_ZFHZZ-app)
+26-02-25.23:11:02.538 [main            ] INFO  ITagServiceTest        - The following 1 profile is active: "dev"
+26-02-25.23:11:03.475 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+26-02-25.23:11:03.476 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+26-02-25.23:11:03.505 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+26-02-25.23:11:05.034 [main            ] INFO  Version                - Redisson 3.26.0
+26-02-25.23:11:06.065 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 192.168.0.106/192.168.0.106:16379
+26-02-25.23:11:06.080 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 192.168.0.106/192.168.0.106:16379
+26-02-25.23:11:06.956 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+26-02-25.23:11:06.996 [main            ] INFO  ITagServiceTest        - Started ITagServiceTest in 4.758 seconds (JVM running for 5.508)
+26-02-25.23:11:07.274 [main            ] INFO  TagService             - 人群标签批次任务 tagId:RQ_KJHKL98UU78H66554GFDV batchId:10001
+26-02-25.23:11:07.310 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+26-02-25.23:11:08.258 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+26-02-25.23:11:08.360 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+26-02-25.23:11:08.362 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+26-02-25.23:11:13.855 [main            ] INFO  ITagServiceTest        - Starting ITagServiceTest using Java 1.8.0_391 on LAPTOP-EK831I6O with PID 27376 (started by ZFHZZ in E:\java_project\group_buy_market_ZFHZZ\group_buy_market_ZFHZZ-app)
+26-02-25.23:11:13.856 [main            ] INFO  ITagServiceTest        - The following 1 profile is active: "dev"
+26-02-25.23:11:14.437 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+26-02-25.23:11:14.439 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+26-02-25.23:11:14.459 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+26-02-25.23:11:16.085 [main            ] INFO  Version                - Redisson 3.26.0
+26-02-25.23:11:16.870 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 192.168.0.106/192.168.0.106:16379
+26-02-25.23:11:16.889 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 192.168.0.106/192.168.0.106:16379
+26-02-25.23:11:17.818 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+26-02-25.23:11:17.851 [main            ] INFO  ITagServiceTest        - Started ITagServiceTest in 4.286 seconds (JVM running for 4.992)
+26-02-25.23:11:18.000 [main            ] INFO  ITagServiceTest        - xiaofuge 存在，预期结果为 true，测试结果:false
+26-02-25.23:11:18.002 [main            ] INFO  ITagServiceTest        - gudebai 不存在，预期结果为 false，测试结果:false
+26-02-25.23:20:09.907 [main            ] INFO  ITagServiceTest        - Starting ITagServiceTest using Java 1.8.0_391 on LAPTOP-EK831I6O with PID 10032 (started by ZFHZZ in E:\java_project\group_buy_market_ZFHZZ\group_buy_market_ZFHZZ-app)
+26-02-25.23:20:09.908 [main            ] INFO  ITagServiceTest        - The following 1 profile is active: "dev"
+26-02-25.23:20:10.430 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+26-02-25.23:20:10.432 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+26-02-25.23:20:10.454 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+26-02-25.23:20:12.031 [main            ] INFO  Version                - Redisson 3.26.0
+26-02-25.23:20:12.578 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 192.168.0.106/192.168.0.106:16379
+26-02-25.23:20:12.588 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 192.168.0.106/192.168.0.106:16379
+26-02-25.23:20:13.532 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+26-02-25.23:20:13.564 [main            ] INFO  ITagServiceTest        - Started ITagServiceTest in 3.942 seconds (JVM running for 4.682)
+26-02-25.23:20:13.713 [main            ] INFO  ITagServiceTest        - xiaofuge 存在，预期结果为 true，测试结果:false
+26-02-25.23:20:13.715 [main            ] INFO  ITagServiceTest        - gudebai 不存在，预期结果为 false，测试结果:false
