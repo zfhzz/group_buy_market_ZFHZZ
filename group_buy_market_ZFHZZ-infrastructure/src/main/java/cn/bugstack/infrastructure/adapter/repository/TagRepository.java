@@ -9,12 +9,15 @@ import cn.bugstack.infrastructure.dao.po.CrowdTags;
 import cn.bugstack.infrastructure.dao.po.CrowdTagsDetail;
 import cn.bugstack.infrastructure.dao.po.CrowdTagsJob;
 import cn.bugstack.infrastructure.redis.IRedisService;
+import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RBitSet;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
+@Slf4j
 @Repository
 public class TagRepository implements ITagRepository {
     @Resource
@@ -53,13 +56,13 @@ public class TagRepository implements ITagRepository {
         crowdTagsDetailReq.setUserId(userId);
 
         try {
-            crowdTagsDetailDao.addCrowdTagsUserId(crowdTagsDetailReq);
-
-            // 获取BitSet
             RBitSet bitSet = redisService.getBitSet(tagId);
             bitSet.set(redisService.getIndexFromUserId(userId), true);
+            crowdTagsDetailDao.addCrowdTagsUserId(crowdTagsDetailReq);
+
         } catch (DuplicateKeyException ignore) {
             // 忽略唯一索引冲突
+            log.info("redis存入失败");
         }
     }
 
