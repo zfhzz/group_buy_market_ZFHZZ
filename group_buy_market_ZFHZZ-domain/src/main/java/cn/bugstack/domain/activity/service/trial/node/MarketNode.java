@@ -66,6 +66,7 @@ public class MarketNode extends AbstractGroupBuyMarketSupport<MarketProductEntit
         log.info("拼团商品查询试算服务-MarketNode userId:{} requestParameter:{}", requestParameter.getUserId(), JSON.toJSONString(requestParameter));
         //平团优惠计算todo
         //这里之后会调用本结点当中的get来并平只好request请求的实体对象和上下文信息来实现逻辑跳转
+        log.info("进入查询结点");
         GroupBuyActivityDiscountVO groupBuyActivityDiscountVO = dynamicContext.getGroupBuyActivityDiscountVO();
         if(groupBuyActivityDiscountVO == null)  return router(requestParameter,dynamicContext);
 
