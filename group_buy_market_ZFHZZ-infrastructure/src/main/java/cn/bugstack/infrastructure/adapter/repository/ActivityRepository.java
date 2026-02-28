@@ -12,6 +12,7 @@ import cn.bugstack.infrastructure.dao.po.GroupBuyActivity;
 import cn.bugstack.infrastructure.dao.po.GroupBuyDiscount;
 import cn.bugstack.infrastructure.dao.po.SCSkuActivity;
 import cn.bugstack.infrastructure.dao.po.Sku;
+import cn.bugstack.infrastructure.dcc.DCCService;
 import cn.bugstack.infrastructure.redis.RedissonService;
 import org.checkerframework.checker.units.qual.A;
 import org.redisson.api.RBitSet;
@@ -36,6 +37,9 @@ public class ActivityRepository implements IActivityRepository {
     private ISCSkuActivityDao skuActivityDao;
     @Autowired
     private RedissonService redissonService;
+
+    @Resource
+    private DCCService dccService;
 
     @Override
     public GroupBuyActivityDiscountVO queryGroupBuyActivityDiscountVO(Long ActivityId) {
@@ -109,5 +113,15 @@ public class ActivityRepository implements IActivityRepository {
         if(!bitSet.isExists()) return true;
         //判断用户是否在人群当中
         return bitSet.get(redissonService.getIndexFromUserId(userId));
+    }
+
+    @Override
+    public boolean downgradeSwitch() {
+        return dccService.isDowngradeSwitch();
+    }
+
+    @Override
+    public boolean cutRange(String userId) {
+        return dccService.isCutRange(userId);
     }
 }

@@ -1,86 +1,14 @@
-26-02-27.00:45:30.391 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Starting IIndexGroupBuyMarketServiceTest using Java 1.8.0_391 on LAPTOP-EK831I6O with PID 36628 (started by ZFHZZ in E:\java_project\group_buy_market_ZFHZZ\group_buy_market_ZFHZZ-app)
-26-02-27.00:45:30.392 [main            ] INFO  IIndexGroupBuyMarketServiceTest - The following 1 profile is active: "dev"
-26-02-27.00:45:31.066 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-26-02-27.00:45:31.068 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-26-02-27.00:45:31.099 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
-26-02-27.00:45:32.556 [main            ] INFO  Version                - Redisson 3.26.0
-26-02-27.00:45:33.150 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 192.168.0.106/192.168.0.106:16379
-26-02-27.00:45:33.169 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 192.168.0.106/192.168.0.106:16379
-26-02-27.00:45:34.792 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-26-02-27.00:45:34.842 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Started IIndexGroupBuyMarketServiceTest in 4.81 seconds (JVM running for 5.672)
-26-02-27.00:45:35.223 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:dacihua requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"dacihua"}
-26-02-27.00:45:35.267 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-26-02-27.00:45:36.036 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-26-02-27.00:45:36.086 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:dacihua 异步线程加载数据「GroupBuyActivityDiscountVO、SkuVO」完成
-26-02-27.00:45:36.086 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:dacihua requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"dacihua"}
-26-02-27.00:45:36.102 [main            ] INFO  TagNode                - 可视
-26-02-27.00:45:36.102 [main            ] INFO  TagNode                - 可参与拼团
-26-02-27.00:45:36.102 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:dacihua requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"dacihua"}
-26-02-27.00:45:36.103 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 请求参数:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"dacihua"}
-26-02-27.00:45:36.108 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 返回结果:{"deductionPrice":90.00,"endTime":1733537980000,"goodsId":"9890001","goodsName":"《手写MyBatis：渐进式源码实践》","isEnable":false,"isVisible":false,"originalPrice":100.00,"startTime":1733537980000,"targetCount":1}
-26-02-27.00:45:36.133 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-26-02-27.00:45:36.137 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-26-02-27.00:46:04.931 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Starting IIndexGroupBuyMarketServiceTest using Java 1.8.0_391 on LAPTOP-EK831I6O with PID 36664 (started by ZFHZZ in E:\java_project\group_buy_market_ZFHZZ\group_buy_market_ZFHZZ-app)
-26-02-27.00:46:04.932 [main            ] INFO  IIndexGroupBuyMarketServiceTest - The following 1 profile is active: "dev"
-26-02-27.00:46:06.140 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-26-02-27.00:46:06.148 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-26-02-27.00:46:06.226 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 36 ms. Found 0 Redis repository interfaces.
-26-02-27.00:46:08.033 [main            ] INFO  Version                - Redisson 3.26.0
-26-02-27.00:46:08.688 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 192.168.0.106/192.168.0.106:16379
-26-02-27.00:46:08.713 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 192.168.0.106/192.168.0.106:16379
-26-02-27.00:46:10.068 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-26-02-27.00:46:10.114 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Started IIndexGroupBuyMarketServiceTest in 5.805 seconds (JVM running for 6.987)
-26-02-27.00:46:10.402 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
-26-02-27.00:46:10.430 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-26-02-27.00:46:11.104 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-26-02-27.00:46:11.148 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xiaofuge 异步线程加载数据「GroupBuyActivityDiscountVO、SkuVO」完成
-26-02-27.00:46:11.148 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
-26-02-27.00:46:11.161 [main            ] INFO  TagNode                - 该用户已经在redis当中存在了
-26-02-27.00:46:11.161 [main            ] INFO  TagNode                - 可视
-26-02-27.00:46:11.161 [main            ] INFO  TagNode                - 可参与拼团
-26-02-27.00:46:11.161 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
-26-02-27.00:46:11.162 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 请求参数:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
-26-02-27.00:46:11.167 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 返回结果:{"deductionPrice":90.00,"endTime":1733537980000,"goodsId":"9890001","goodsName":"《手写MyBatis：渐进式源码实践》","isEnable":true,"isVisible":true,"originalPrice":100.00,"startTime":1733537980000,"targetCount":1}
-26-02-27.00:46:11.194 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-26-02-27.00:46:11.199 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-26-02-27.01:11:10.163 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Starting IIndexGroupBuyMarketServiceTest using Java 1.8.0_391 on LAPTOP-EK831I6O with PID 16952 (started by ZFHZZ in E:\java_project\group_buy_market_ZFHZZ\group_buy_market_ZFHZZ-app)
-26-02-27.01:11:10.164 [main            ] INFO  IIndexGroupBuyMarketServiceTest - The following 1 profile is active: "dev"
-26-02-27.01:11:10.777 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-26-02-27.01:11:10.778 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-26-02-27.01:11:10.801 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
-26-02-27.01:11:12.060 [main            ] INFO  Version                - Redisson 3.26.0
-26-02-27.01:11:12.506 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 192.168.0.106/192.168.0.106:16379
-26-02-27.01:11:12.518 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 192.168.0.106/192.168.0.106:16379
-26-02-27.01:11:13.905 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-26-02-27.01:11:14.031 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Started IIndexGroupBuyMarketServiceTest in 4.17 seconds (JVM running for 4.895)
-26-02-27.01:11:14.507 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
-26-02-27.01:11:14.533 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-26-02-27.01:11:15.177 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-26-02-27.01:11:15.218 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xiaofuge 异步线程加载数据「GroupBuyActivityDiscountVO、SkuVO」完成
-26-02-27.01:11:15.218 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
-26-02-27.01:11:15.229 [main            ] INFO  TagNode                - 该用户已经在redis当中存在了
-26-02-27.01:11:15.229 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
-26-02-27.01:11:15.229 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 请求参数:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
-26-02-27.01:11:15.233 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 返回结果:{"deductionPrice":90.00,"endTime":1733537980000,"goodsId":"9890001","goodsName":"《手写MyBatis：渐进式源码实践》","isEnable":true,"isVisible":true,"originalPrice":100.00,"startTime":1733537980000,"targetCount":1}
-26-02-27.01:11:15.258 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-26-02-27.01:11:15.263 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-26-02-27.01:12:01.065 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Starting IIndexGroupBuyMarketServiceTest using Java 1.8.0_391 on LAPTOP-EK831I6O with PID 36204 (started by ZFHZZ in E:\java_project\group_buy_market_ZFHZZ\group_buy_market_ZFHZZ-app)
-26-02-27.01:12:01.066 [main            ] INFO  IIndexGroupBuyMarketServiceTest - The following 1 profile is active: "dev"
-26-02-27.01:12:01.637 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-26-02-27.01:12:01.639 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-26-02-27.01:12:01.672 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
-26-02-27.01:12:02.856 [main            ] INFO  Version                - Redisson 3.26.0
-26-02-27.01:12:03.322 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 192.168.0.106/192.168.0.106:16379
-26-02-27.01:12:03.335 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 192.168.0.106/192.168.0.106:16379
-26-02-27.01:12:04.407 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-26-02-27.01:12:04.444 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Started IIndexGroupBuyMarketServiceTest in 3.697 seconds (JVM running for 4.428)
-26-02-27.01:12:04.695 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:dacihua requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"dacihua"}
-26-02-27.01:12:04.719 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-26-02-27.01:12:05.332 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-26-02-27.01:12:05.385 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:dacihua 异步线程加载数据「GroupBuyActivityDiscountVO、SkuVO」完成
-26-02-27.01:12:05.385 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:dacihua requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"dacihua"}
-26-02-27.01:12:05.400 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:dacihua requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"dacihua"}
-26-02-27.01:12:05.401 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 请求参数:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"dacihua"}
-26-02-27.01:12:05.406 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 返回结果:{"deductionPrice":90.00,"endTime":1733537980000,"goodsId":"9890001","goodsName":"《手写MyBatis：渐进式源码实践》","isEnable":false,"isVisible":false,"originalPrice":100.00,"startTime":1733537980000,"targetCount":1}
-26-02-27.01:12:05.432 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-26-02-27.01:12:05.438 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+26-02-28.11:49:48.190 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Starting IIndexGroupBuyMarketServiceTest using Java 1.8.0_391 on LAPTOP-EK831I6O with PID 5772 (started by ZFHZZ in E:\java_project\group_buy_market_ZFHZZ\group_buy_market_ZFHZZ-app)
+26-02-28.11:49:48.191 [main            ] INFO  IIndexGroupBuyMarketServiceTest - The following 1 profile is active: "dev"
+26-02-28.11:49:48.819 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+26-02-28.11:49:48.821 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+26-02-28.11:49:48.845 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+26-02-28.11:49:49.026 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [cn.bugstack.config.RedisClientConfig$$EnhancerBySpringCGLIB$$ad05e511] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+26-02-28.11:49:49.344 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-cn.bugstack.config.RedisClientConfigProperties' of type [cn.bugstack.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+26-02-28.11:49:49.855 [main            ] INFO  Version                - Redisson 3.26.0
+26-02-28.11:49:50.380 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 192.168.3.245/192.168.3.245:16379
+26-02-28.11:49:50.413 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 192.168.3.245/192.168.3.245:16379
+26-02-28.11:49:50.439 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+26-02-28.11:49:51.721 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+26-02-28.11:49:51.754 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Started IIndexGroupBuyMarketServiceTest in 3.847 seconds (JVM running for 6.666)
+26-02-28.11:49:52.066 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}

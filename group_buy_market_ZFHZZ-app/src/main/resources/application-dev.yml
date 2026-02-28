@@ -45,7 +45,7 @@ logging:
 redis:
   sdk:
     config:
-      host: 192.168.0.106
+      host: 192.168.3.245
       port: 16379
       pool-size: 10
       min-idle-size: 5
