@@ -80,8 +80,9 @@ public class MarketNode extends AbstractGroupBuyMarketSupport<MarketProductEntit
             log.info("不存在{}类型的折扣计算服务，支持类型为:{}", groupBuyDiscount.getMarketPlan(), JSON.toJSONString(discountCalculateServiceMap.keySet()));
             throw new AppException(ResponseCode.E0001.getCode());
         }
-        BigDecimal calculate = discountCalculateService.calculate(requestParameter.getUserId(),skuVO.getOriginalPrice(),groupBuyDiscount);
-        dynamicContext.setDeductionPrice(calculate);
+        BigDecimal payPrice = discountCalculateService.calculate(requestParameter.getUserId(),skuVO.getOriginalPrice(),groupBuyDiscount);
+        dynamicContext.setPayPrice(payPrice);
+        dynamicContext.setDeductionPrice(skuVO.getOriginalPrice().subtract(payPrice));
         return router(requestParameter,dynamicContext);
     }
 
