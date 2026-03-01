@@ -5,9 +5,8 @@ import cn.bugstack.domain.trade.model.entity.PayActivityEntity;
 import cn.bugstack.domain.trade.model.entity.PayDiscountEntity;
 import cn.bugstack.domain.trade.model.entity.UserEntity;
 import cn.bugstack.domain.trade.model.valobj.GroupBuyProgressVO;
-import org.apache.tomcat.jni.User;
 
-public interface ITradeOrderService {
+public interface ITradeLockOrderService {
     /**
      * 查询，未被支付消费完成的营销优惠订单
      *
