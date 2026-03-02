@@ -29,4 +29,6 @@ public class GroupBuyTeamEntity {
     private Date validStartTime;
     /** 拼团结束时间 **/
     private Date validEndTime;
+    /** 回调交易地址 **/
+    private String notifyUrl;
 }
