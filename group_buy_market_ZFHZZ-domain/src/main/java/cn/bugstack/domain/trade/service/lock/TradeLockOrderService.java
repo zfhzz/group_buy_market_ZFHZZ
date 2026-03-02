@@ -20,7 +20,7 @@ public class TradeLockOrderService implements ITradeLockOrderService {
     private ITradeRepository repository;
 
     @Resource
-    private BusinessLinkedList<TradeRuleCommandEntity, TradeRuleFilterFactory.DynamicContext, TradeRuleFilterBackEntity> tradeRouterFilter;
+    private BusinessLinkedList<TradeLockCommandEntity, TradeRuleFilterFactory.DynamicContext, TradeLockFilterBackEntity> tradeRouterFilter;
 
     @Override
     public MarketPayOrderEntity queryNoPayMarketPayOrderByOutTradeNo(String userId, String outTradeNo) {
@@ -38,7 +38,7 @@ public class TradeLockOrderService implements ITradeLockOrderService {
     public MarketPayOrderEntity lockMarketPayOrder(UserEntity userEntity, PayActivityEntity payActivityEntity, PayDiscountEntity payDiscountEntity) throws Exception {
         log.info("拼团交易-锁定营销优惠支付订单:{} activityId:{} goodsId:{}", userEntity.getUserId(), payActivityEntity.getActivityId(), payDiscountEntity.getGoodsId());
         //责任链模型，用于过滤用户出拼团
-        TradeRuleFilterBackEntity tradeRuleFilterBackEntity=tradeRouterFilter.apply(TradeRuleCommandEntity.builder()
+        TradeLockFilterBackEntity tradeRuleFilterBackEntity=tradeRouterFilter.apply(TradeLockCommandEntity.builder()
                         .userId(userEntity.getUserId())
                         .activityId(payActivityEntity.getActivityId())
                 .build(),new TradeRuleFilterFactory.DynamicContext());

@@ -5,5 +5,5 @@ import cn.bugstack.domain.trade.model.entity.TradePaySuccessEntity;
 
 //拼团结算
 public interface ITradeSettlementOrderService {
-    TradePaySettlementEntity settlementMarketPayOrder(TradePaySuccessEntity tradePaySuccessEntity);
+    TradePaySettlementEntity settlementMarketPayOrder(TradePaySuccessEntity tradePaySuccessEntity) throws Exception;
 }

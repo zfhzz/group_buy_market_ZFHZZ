@@ -6,10 +6,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @Builder
+@AllArgsConstructor
 @NoArgsConstructor
-public class TradeRuleCommandEntity {
-    private String userId;
-    private long activityId;
+public class TradeLockFilterBackEntity {
+
+    //用户已经参与了几次这个活动了
+    private Integer userTaskOrderCount;
 }
