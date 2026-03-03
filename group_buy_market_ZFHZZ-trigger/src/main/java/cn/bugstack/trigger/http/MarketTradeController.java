@@ -38,7 +38,7 @@ public class MarketTradeController implements IMarketTradeService {
     @Resource
     private ITradeSettlementOrderService tradeSettlementOrderService;
 
-    @RequestMapping(value = "lock_market_pay_rder", method = RequestMethod.POST)
+    @RequestMapping(value = "lock_market_pay_order", method = RequestMethod.POST)
     @Override
     public Response<LockMarketPayOrderResponseDTO> lockMarketPayOrder(@RequestBody LockMarketPayOrderRequestDTO lockMarketPayOrderRequestDTO) {
         try {
