@@ -20,12 +20,13 @@ public class GroupBuyNotifyService {
             // 1. 构建参数
             MediaType mediaType = MediaType.parse("application/json");
             RequestBody body = RequestBody.create(mediaType, notifyRequestDTOJSON);
+            log.info(notifyRequestDTOJSON);
             Request request = new Request.Builder()
                     .url(apiUrl)
                     .post(body)
                     .addHeader("content-type", "application/json")
                     .build();
-
+            log.info("发送请求回调成功");
             // 2. 调用接口
             Response response = okHttpClient.newCall(request).execute();
 
