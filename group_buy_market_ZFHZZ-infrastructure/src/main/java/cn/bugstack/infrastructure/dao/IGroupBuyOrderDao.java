@@ -2,6 +2,7 @@ package cn.bugstack.infrastructure.dao;
 
 import cn.bugstack.infrastructure.dao.po.GroupBuyOrder;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Set;
@@ -22,12 +23,12 @@ public interface IGroupBuyOrderDao {
     int updateAddCompleteCount(String teamId);
 
     int updateOrderStatus2COMPLETE(String teamId);
+    //云服务器部署需要
+    List<GroupBuyOrder> queryGroupBuyProgressByTeamIds(@Param("teamIds") Set<String> teamIds);
 
-    Integer queryAllTeamCount(Set<String> teamIds);
+    Integer queryAllTeamCount(@Param("teamIds") Set<String> teamIds);
 
-    Integer queryAllTeamCompleteCount(Set<String> teamIds);
+    Integer queryAllTeamCompleteCount(@Param("teamIds") Set<String> teamIds);
 
-    Integer queryAllUserCount(Set<String> teamIds);
-
-    List<GroupBuyOrder> queryGroupBuyProgressByTeamIds(Set<String> teamIds);
+    Integer queryAllUserCount(@Param("teamIds") Set<String> teamIds);
 }

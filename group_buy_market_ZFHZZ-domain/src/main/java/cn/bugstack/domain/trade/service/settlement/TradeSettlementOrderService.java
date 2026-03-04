@@ -103,6 +103,7 @@ public class TradeSettlementOrderService implements ITradeSettlementOrderService
 
     private Map<String, Integer> execSettlementNotifyJob(List<NotifyTaskEntity> notifyTaskEntityList) throws Exception{
         int successCount=0,errorCount=0,retryCount=0;
+        //组装url并回调数据
         for(NotifyTaskEntity notifyTask : notifyTaskEntityList){
             //回调处理success成功，error失败
             String response = port.groupBuyNotify(notifyTask);

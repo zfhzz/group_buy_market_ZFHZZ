@@ -38,6 +38,7 @@ public class IndexGroupBuyMarketServiceImpl implements IIndexGroupBuyMarketServi
         List<UserGroupBuyOrderDetailEntity> unionAllList = new ArrayList<>();
         // 查询个人拼团数据
         if (0 != ownerCount) {
+            //查询出当前用户参加的活动所有team的实体
             List<UserGroupBuyOrderDetailEntity> ownerList = repository.queryInProgressUserGroupBuyOrderDetailListByOwner(activityId, userId, ownerCount);
             if (null != ownerList && !ownerList.isEmpty()){
                 unionAllList.addAll(ownerList);
@@ -51,7 +52,6 @@ public class IndexGroupBuyMarketServiceImpl implements IIndexGroupBuyMarketServi
                 unionAllList.addAll(randomList);
             }
         }
-
         return unionAllList;
     }
 

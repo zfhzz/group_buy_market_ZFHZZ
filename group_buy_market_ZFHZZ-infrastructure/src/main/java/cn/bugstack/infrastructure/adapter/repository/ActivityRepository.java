@@ -135,6 +135,7 @@ public class ActivityRepository implements IActivityRepository {
         groupBuyOrderListReq.setActivityId(activityId);
         groupBuyOrderListReq.setUserId(userId);
         groupBuyOrderListReq.setCount(ownerCount);
+        //查询出当前用户在该活动下参与的全部拼团
         List<GroupBuyOrderList> groupBuyOrderLists = groupBuyOrderListDao.queryInProgressUserGroupBuyOrderDetailListByUserId(groupBuyOrderListReq);
         if (null == groupBuyOrderLists || groupBuyOrderLists.isEmpty()) return null;
 
@@ -144,10 +145,11 @@ public class ActivityRepository implements IActivityRepository {
                 .filter(teamId -> teamId != null && !teamId.isEmpty()) // 过滤非空和非空字符串
                 .collect(Collectors.toSet());
 
+        //查询出全部未锁单的GroupBuyOrder
         // 3 查询队伍明细，组装MAP结构
         List<GroupBuyOrder> groupBuyOrders = groupBuyOrderDao.queryGroupBuyProgressByTeamIds(teamIds);
         if (null == groupBuyOrders || groupBuyOrders.isEmpty()) return null;
-
+        //组装出map<teamId,GroupBuyOrder>的map
         Map<String, GroupBuyOrder> groupBuyOrderMap = groupBuyOrders.stream()
                 .collect(Collectors.toMap(GroupBuyOrder::getTeamId, order -> order));
 
@@ -182,6 +184,7 @@ public class ActivityRepository implements IActivityRepository {
         groupBuyOrderListReq.setActivityId(activityId);
         groupBuyOrderListReq.setUserId(userId);
         groupBuyOrderListReq.setCount(randomCount * 2); // 查询2倍的量，之后其中 randomCount 数量
+        //查询出不超过2倍的randomCount的总量
         List<GroupBuyOrderList> groupBuyOrderLists = groupBuyOrderListDao.queryInProgressUserGroupBuyOrderDetailListByRandom(groupBuyOrderListReq);
 
         if (null == groupBuyOrderLists || groupBuyOrderLists.isEmpty()) return null;
@@ -246,6 +249,9 @@ public class ActivityRepository implements IActivityRepository {
                 .collect(Collectors.toSet());
 
         // 3. 统计数据
+        //参与用户的总人数
+        //拼团完成的总数
+        //参与拼团的总人数
         Integer allTeamCount = groupBuyOrderDao.queryAllTeamCount(teamIds);
         Integer allTeamCompleteCount = groupBuyOrderDao.queryAllTeamCompleteCount(teamIds);
         Integer allTeamUserCount = groupBuyOrderDao.queryAllUserCount(teamIds);

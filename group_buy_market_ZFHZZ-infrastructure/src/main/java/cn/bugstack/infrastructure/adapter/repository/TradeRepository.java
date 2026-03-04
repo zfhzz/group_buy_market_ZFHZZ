@@ -213,6 +213,7 @@ public class TradeRepository implements ITradeRepository {
             throw new AppException(ResponseCode.UPDATE_ZERO.getCode());
         }
         //3更新拼团完成状态
+        //如果差目前这一个人就成功达成拼团
         if(groupBuyTeamEntity.getTargetCount() - groupBuyTeamEntity.getCompleteCount() == 1){
             int updateOrderStatusCount = groupBuyOrderDao.updateOrderStatus2COMPLETE(groupBuyTeamEntity.getTeamId());
             if (1 != updateOrderStatusCount) {
@@ -220,6 +221,7 @@ public class TradeRepository implements ITradeRepository {
             }
 
             // 查询拼团交易完成外部单号列表
+            // 将该平团当中的全部用户取出来更新拼团单号
             List<String> outTradeNoList = groupBuyOrderListDao.queryGroupBuyCompleteOrderOutTradeNoListByTeamId(groupBuyTeamEntity.getTeamId());
 
             //平团完成写入回调任务记录
@@ -286,6 +288,7 @@ public class TradeRepository implements ITradeRepository {
     public List<NotifyTaskEntity> queryUnExecutedNotifyTaskList(String teamId) {
         NotifyTask notifyTask = notifyTaskDao.queryUnExecutedNotifyTaskByTeamId(teamId);
         if (null == notifyTask) return new ArrayList<>();
+        //查询出未回调、以及回调重试的数据
         return Collections.singletonList(NotifyTaskEntity.builder()
                 .teamId(notifyTask.getTeamId())
                 .notifyUrl(notifyTask.getNotifyUrl())

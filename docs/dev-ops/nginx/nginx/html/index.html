@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>小傅哥 - 拼团项目 - 商品详情页</title>
+    <title>商品详情页</title>
     <link rel="stylesheet" href="css/index.css">
 
 </head>
@@ -22,7 +22,7 @@
 <div class="product-info">
     <h1 class="product-title">手写MyBatis：渐进式源码实践（全彩）</h1>
     <span class="promotion-tag">大促优惠</span>
-    <span class="promotion-text"></span> <!-- 动态填充促销文本 -->
+    <span class="promotion-text"></span>
 </div>
 
 <!-- 拼单列表容器 -->
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
             groupList.innerHTML = `
                 <div class="group-item empty-tips">
                     <div class="tips-content">
-                        小伙伴，赶紧去开团吧，做村里最靓的仔！🎉
+                        速速加入拼团！
                     </div>
                 </div>
             `;
@@ -221,6 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const buttons = document.querySelectorAll(".buy-alone")
 
   // 为每个按钮添加点击事件
+    //如果在cookie当中不存username,则直接跳转到login页面
   buttons.forEach((button) => {
     button.addEventListener("click", function () {
       var userId = getCookie("username");

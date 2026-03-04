@@ -35,7 +35,7 @@ public class MarketIndexController implements IMarketIndexService {
     public Response<GoodsMarketResponseDTO> queryGroupBuyMarketConfig(@RequestBody GoodsMarketRequestDTO requestDTO) {
         try{
             log.info("查询拼团营销配置开始:{} goodsId:{}", requestDTO.getUserId(), requestDTO.getGoodsId());
-
+            //参数判断是否为空
             if (StringUtils.isBlank(requestDTO.getUserId()) || StringUtils.isBlank(requestDTO.getSource()) || StringUtils.isBlank(requestDTO.getChannel()) || StringUtils.isBlank(requestDTO.getGoodsId())) {
                 return cn.bugstack.api.response.Response.<GoodsMarketResponseDTO>builder()
                         .code(ResponseCode.ILLEGAL_PARAMETER.getCode())
@@ -55,6 +55,7 @@ public class MarketIndexController implements IMarketIndexService {
             Long activityId = groupBuyActivityDiscountVO.getActivityId();
 
             // 2. 查询拼团组队
+            //其中包括用户自己参与的拼团以及随机挑选的2个额外的拼团
             List<UserGroupBuyOrderDetailEntity> userGroupBuyOrderDetailEntities = indexGroupBuyMarketService.queryInProgressUserGroupBuyOrderDetailList(activityId, requestDTO.getUserId(), 1, 2);
 
             // 3. 统计拼团数据
@@ -70,6 +71,7 @@ public class MarketIndexController implements IMarketIndexService {
 
             if(userGroupBuyOrderDetailEntities != null && !userGroupBuyOrderDetailEntities.isEmpty()){
                 for(UserGroupBuyOrderDetailEntity userGroupBuyOrderDetailEntity : userGroupBuyOrderDetailEntities){
+                    //将全部队伍加入到teams当中
                     GoodsMarketResponseDTO.Team team = GoodsMarketResponseDTO.Team.builder()
                             .userId(userGroupBuyOrderDetailEntity.getUserId())
                             .teamId(userGroupBuyOrderDetailEntity.getTeamId())
